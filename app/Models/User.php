@@ -11,7 +11,7 @@ use Spatie\Translatable\HasTranslations;
 
 class User extends Authenticatable
 {
-    use HasFactory, Notifiable, HasTranslations;
+    use HasFactory, Notifiable;
 
     /**
      * The attributes that are mass assignable.
@@ -22,8 +22,9 @@ class User extends Authenticatable
         'first_name',
         'last_name',
         'email',
-        'password',
         'phone',
+        'password',
+
     ];
 
     /**
