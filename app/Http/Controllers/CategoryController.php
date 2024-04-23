@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Category;
 use App\Http\Requests\StoreCategoryRequest;
 use App\Http\Requests\UpdateCategoryRequest;
+use Illuminate\Http\Response;
 
 class CategoryController extends Controller
 {
@@ -13,16 +14,9 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        //
+        return response(['categories'=>Category::all()]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
 
     /**
      * Store a newly created resource in storage.
@@ -37,16 +31,11 @@ class CategoryController extends Controller
      */
     public function show(Category $category)
     {
-        //
+        return response([
+            'category'=>$category
+        ]);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Category $category)
-    {
-        //
-    }
 
     /**
      * Update the specified resource in storage.
@@ -61,6 +50,9 @@ class CategoryController extends Controller
      */
     public function destroy(Category $category)
     {
-        //
+        Category::destroy($category);
+        return response([
+            'result'=>'Product deleted successfully!'
+        ]);
     }
 }
