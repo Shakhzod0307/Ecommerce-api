@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CategoryProductController;
 use App\Http\Controllers\ProductController;
@@ -10,12 +11,14 @@ Route::get('/user', function (Request $request) {
     return $request->user();
 })->middleware('auth:sanctum');
 
-Route::apiResources([
-    'category'=>CategoryController::class,
-    'products'=>ProductController::class,
-    'category.products'=>CategoryProductController::class,
-]);
+Route::post('login',[AuthController::class,'login']);
+Route::post('register',[AuthController::class,'register']);
 
+Route::middleware('auth:sanctum')->group(function () {
+    Route::apiResource('category', CategoryController::class);
+    Route::apiResource('products', ProductController::class);
+    Route::apiResource('category.products', CategoryProductController::class);
+});
 
 
 
