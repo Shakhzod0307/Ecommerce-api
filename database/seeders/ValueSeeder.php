@@ -14,37 +14,37 @@ class ValueSeeder extends Seeder
     public function run(): void
     {
         Value::create([
-            'attribut_id'=>1,
+            'attribute_id'=>1,
             'name'=>[
                 'uz'=>'Qizil',
                 'ru'=>'Красный',
             ]
         ]);Value::create([
-            'attribut_id'=>1,
+            'attribute_id'=>1,
             'name'=>[
                 'uz'=>'Sariq',
                 'ru'=>'Желтый',
             ]
         ]);Value::create([
-            'attribut_id'=>1,
+            'attribute_id'=>1,
             'name'=>[
                 'uz'=>'Qora',
                 'ru'=>'Черный',
             ]
         ]);Value::create([
-            'attribut_id'=>1,
+            'attribute_id'=>1,
             'name'=>[
                 'uz'=>'Jigarrang',
                 'ru'=>'Коричневый',
             ]
         ]);Value::create([
-            'attribut_id'=>2,
+            'attribute_id'=>2,
             'name'=>[
                 'uz'=>'MDF',
                 'ru'=>'МДФ',
             ]
         ]);Value::create([
-            'attribut_id'=>2,
+            'attribute_id'=>2,
             'name'=>[
                 'uz'=>'KSGF',
                 'ru'=>'КСГФ',
