@@ -6,9 +6,10 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\LoginRequest;
 use App\Http\Requests\RegisterRequest;
 use App\Models\User;
-use Illuminate\Http\Request;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\ValidationException;
+
 
 class AuthController extends Controller
 {
@@ -33,5 +34,15 @@ class AuthController extends Controller
         return response()->json([
             'token'=>$user->createToken($request->email)->plainTextToken
         ]);
+    }
+
+    public function user():JsonResponse
+    {
+        return response()->json(['Authenticated User'=>auth()->user()]);
+    }
+
+    public function logout()
+    {
+        //
     }
 }
