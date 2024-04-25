@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Order extends Model
 {
@@ -18,8 +19,20 @@ class Order extends Model
         'product',
     ];
 
+    protected $casts = [
+        'product'=>'array',
+        'address'=>'array',
+    ];
     public function user()
     {
         return $this->belongsTo(User::class);
+    }
+    public function paymentType():BelongsTo
+    {
+        return $this->belongsTo(PaymentType::class);
+    }
+    public function deliveryMethod():BelongsTo
+    {
+        return $this->belongsTo(DeliveryMethod::class);
     }
 }

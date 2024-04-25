@@ -18,7 +18,7 @@ return new class extends Migration
             $table->foreignId('delivery_method_id')->constrained();
             $table->foreignId('payment_type_id')->constrained();
             $table->integer('sum');
-            $table->text('address');
+            $table->text('address')->nullable();
             $table->json('product');
             $table->timestamps();
         });

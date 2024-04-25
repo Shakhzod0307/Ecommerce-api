@@ -16,6 +16,7 @@ class UserAddress extends Model
         'region',
         'district',
         'street',
+        'home'
     ];
 
     public function user():BelongsTo

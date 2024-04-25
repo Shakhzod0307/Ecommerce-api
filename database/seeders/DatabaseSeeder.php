@@ -24,6 +24,8 @@ class DatabaseSeeder extends Seeder
            AttributeSeeder::class,
            StockSeeder::class,
            ValueSeeder::class,
+           DeliveryMethodSeeder::class,
+           PaymentTypeSeeder::class,
        ]);
         User::factory()->count(20)->create();
 
